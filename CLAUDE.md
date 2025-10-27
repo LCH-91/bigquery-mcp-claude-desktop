@@ -15,15 +15,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Documentation Standards
 
 **Prohibited**:
-- ❌ Fabricating non-existent features, APIs, files, or configurations
-- ❌ Assuming system behavior (must verify)
-- ❌ Guessing user intent (must confirm)
-- ❌ Describing planned features as existing
+- Fabricating non-existent features, APIs, files, or configurations
+- Assuming system behavior (must verify)
+- Guessing user intent (must confirm)
+- Describing planned features as existing
 
 **Required**:
-- ✅ All technical details must come from actual code/config files
-- ✅ Check files or ask when uncertain
-- ✅ Distinguish reality from planning (mark future items as "planned")
+- All technical details must come from actual code/config files
+- Check files or ask when uncertain
+- Distinguish reality from planning (mark future items as "planned")
 
 **Verification Checklist**:
 - [ ] Use Read/Glob to verify files exist before documenting
@@ -40,7 +40,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Error Handling**:
 ```python
-# ✅ Correct: Explicit error handling
+# Correct: Explicit error handling
 try:
     result = process_data(data)
 except ValueError as e:
@@ -50,11 +50,11 @@ except ValueError as e:
 
 **Logging**:
 ```python
-# ✅ Correct: Structured logging
+# Correct: Structured logging
 logger.info(f"Processing {file_path}, size: {file_size}")
 logger.error(f"Failed to process {file_path}: {error}", exc_info=True)
 
-# ❌ Wrong
+# Wrong
 print("Debug")  # Never use print
 ```
 
