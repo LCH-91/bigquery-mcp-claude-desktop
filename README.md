@@ -2,7 +2,7 @@
 
 讓 Claude Desktop 用自然語言查詢 BigQuery，支援中文欄位描述。
 
-## ⚠️ 重要安全聲明
+## 安全聲明
 
 **資料傳輸風險**：
 - 查詢**結果**會傳送至 Anthropic 進行分析
@@ -61,7 +61,7 @@ Claude Desktop：分析並回覆
 **關鍵**:
 - 本機執行，MCP 通訊不經過網路
 - BigQuery 連線使用 TLS 1.2+ 加密
-- ⚠️ 查詢結果會傳至 Anthropic 進行分析
+- 查詢結果會傳至 Anthropic 進行分析
 
 ---
 
@@ -188,7 +188,7 @@ Anthropic API (分析結果)
 
 - 本機通訊使用 stdio，不經過網路
 - BigQuery 連線使用 TLS 1.2+ 加密
-- ⚠️ 查詢結果會傳至 Anthropic 進行分析
+- 查詢結果會傳至 Anthropic 進行分析
 
 ### 權限最小化
 

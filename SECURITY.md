@@ -12,7 +12,7 @@ BigQuery (Google Cloud)
 Anthropic API (分析結果)
 ```
 
-⚠️ **關鍵風險**：查詢結果會傳送至 Anthropic 進行分析
+**關鍵風險**：查詢結果會傳送至 Anthropic 進行分析
 
 **適用場景**：
 - 聚合統計資料（SUM, COUNT, AVG）
@@ -71,10 +71,10 @@ gcloud iam service-accounts keys delete OLD_KEY_ID \
 
 | 威脅 | 風險 | 緩解措施 |
 |------|------|---------|
-| 金鑰洩露 | 🔴 高 | 不上傳 Git、定期輪換 |
-| 資料外洩 | 🔴 高 | 只開放脫敏/聚合 dataset |
-| 權限過大 | 🟡 中 | Dataset 層級限制 |
-| 查詢濫用 | 🟡 中 | 設定配額限制 |
+| 金鑰洩露 | 高 | 不上傳 Git、定期輪換 |
+| 資料外洩 | 高 | 只開放脫敏/聚合 dataset |
+| 權限過大 | 中 | Dataset 層級限制 |
+| 查詢濫用 | 中 | 設定配額限制 |
 
 ---
 
