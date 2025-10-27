@@ -108,11 +108,11 @@ gcloud projects get-iam-policy YOUR_PROJECT_ID \
 
 ### update_bigquery_descriptions.py
 
-**Configuration Variables**:
-- `PROJECT_ID`: BigQuery project ID
-- `GOOGLE_SHEET_ID`: Google Sheets ID (from URL)
-- `CREDENTIALS_PATH`: Service account key path
-- `TARGET_DATASETS`: List of datasets to update
+**Configuration**: Uses environment variables (see `.env.example`)
+- `BIGQUERY_PROJECT`
+- `GOOGLE_SHEET_ID`
+- `GOOGLE_APPLICATION_CREDENTIALS`
+- `TARGET_DATASETS`
 
 **Google Sheets Structure**:
 1. "Table 列表" worksheet: Columns `BQ Table`, `Table 說明`, `狀態`
@@ -155,9 +155,9 @@ gcloud projects get-iam-policy YOUR_PROJECT_ID \
 - Revoke if leaked: `gcloud iam service-accounts keys delete KEY_ID`
 
 **Data Privacy**:
-- Processing is local (stdio communication)
-- No data passes through Anthropic servers
-- BigQuery uses TLS 1.2+ encryption (negotiates up to TLS 1.3 when supported)
+- MCP communication is local (stdio)
+- Query results are sent to Anthropic for analysis
+- BigQuery uses TLS 1.2+ encryption
 
 ## Common Issues
 

@@ -71,7 +71,7 @@ Claude Desktop：分析並回覆
 
 | 項目 | Windows | macOS |
 |------|---------|-------|
-| Claude Desktop | [下載](https://claude.ai/download) | [下載](https://claude.ai/download) |
+| Claude Desktop | [下載](https://claude.com/download) | [下載](https://claude.com/download) |
 | Python 3.8+ | [下載](https://python.org) | `brew install python` |
 | gcloud CLI | [安裝](https://cloud.google.com/sdk/docs/install) | `brew install google-cloud-sdk` |
 
@@ -104,33 +104,13 @@ gcloud iam service-accounts keys create bigquery-key.json \
     --iam-account=bigquery-mcp@YOUR_PROJECT_ID.iam.gserviceaccount.com
 ```
 
-#### Step 2: 下載 MCP Toolbox
+#### Step 2: 安裝 MCP Toolbox
 
-**來源**：[MCP Toolbox 官方儲存桶](https://storage.googleapis.com/toolbox-binaries/)
-**版本**：0.16.0
+請參考 [MCP 官方文件](https://modelcontextprotocol.io/introduction) 下載對應平台的 MCP server。
 
-**Windows**:
-```bash
-curl -L -o toolbox.exe https://storage.googleapis.com/toolbox-binaries/0.16.0/windows-amd64/toolbox.exe
-```
-
-**macOS Intel**:
-```bash
-curl -L -o toolbox https://storage.googleapis.com/toolbox-binaries/0.16.0/darwin-amd64/toolbox
-chmod +x toolbox
-```
-
-**macOS Apple Silicon**:
-```bash
-curl -L -o toolbox https://storage.googleapis.com/toolbox-binaries/0.16.0/darwin-arm64/toolbox
-chmod +x toolbox
-```
-
-**檔案完整性驗證**：
-```bash
-sha256sum toolbox.exe  # Linux/macOS
-certutil -hashfile toolbox.exe SHA256  # Windows
-```
+或使用已打包的 toolbox (需自行取得)：
+- Windows: `toolbox.exe`
+- macOS: `toolbox` (需 `chmod +x`)
 
 #### Step 3: 配置 Claude Desktop
 
@@ -176,17 +156,6 @@ certutil -hashfile toolbox.exe SHA256  # Windows
 
 ## 使用指南
 
-### 配置 Custom Instructions
-
-在 Claude Desktop 設定 → Custom Instructions:
-
-```
-當用戶詢問 BigQuery 資料時:
-1. 使用 get_table_info 查詢 schema（含中文描述）
-2. 根據欄位描述生成正確的 SQL
-3. 執行查詢並分析結果
-```
-
 ### 查詢範例
 
 | 你的問題 | Claude 的處理 |
@@ -198,45 +167,10 @@ certutil -hashfile toolbox.exe SHA256  # Windows
 
 ### 快速測試
 
-使用 BigQuery 公開資料集測試：
-
-```
-在 Claude Desktop 詢問：
-
-請查詢 bigquery-public-data.samples.shakespeare 中
-出現次數最多的前 10 個單字
-```
-
-預期 Claude 會生成並執行類似的 SQL：
-
-```sql
-SELECT word, SUM(word_count) AS total
-FROM `bigquery-public-data.samples.shakespeare`
-GROUP BY word
-ORDER BY total DESC
-LIMIT 10;
-```
+在 Claude Desktop 詢問：`請查詢 bigquery-public-data.samples.shakespeare 中出現次數最多的前 10 個單字`
 
 ---
 
-## 專案結構
-
-```
-bigquery-mcp-claude-desktop/
-├── README.md                           # 專案說明與快速開始
-├── CLAUDE.md                           # Claude Code 開發指南
-├── SECURITY.md                         # 安全性說明文件
-├── SCRIPTS.md                          # Python 腳本詳細說明
-├── LICENSE                             # MIT 授權條款
-│
-├── update_bigquery_descriptions.py     # 同步描述到 BigQuery
-├── requirements.txt                    # Python 依賴清單
-│
-├── bigquery-key.json                   # 服務帳戶金鑰（本地存放，請勿上傳）
-└── toolbox.exe / toolbox               # MCP Toolbox 執行檔
-```
-
----
 
 ## 安全性
 

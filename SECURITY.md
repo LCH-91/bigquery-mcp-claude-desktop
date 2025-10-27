@@ -95,4 +95,4 @@ gcloud iam service-accounts disable bigquery-mcp@YOUR_PROJECT_ID.iam.gserviceacc
 
 ---
 
-**延伸閱讀**：[BigQuery Security](https://cloud.google.com/bigquery/docs/security)
+**延伸閱讀**：[BigQuery Access Control](https://cloud.google.com/bigquery/docs/access-control)
