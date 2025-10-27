@@ -1,0 +1,66 @@
+# BigQuery Service Account Keys (SENSITIVE!)
+bigquery-key.json
+*.json.key
+*-key.json
+
+# MCP Toolbox Binaries (too large)
+toolbox.exe
+toolbox
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Generated Schema Cache (可選擇性忽略)
+# bigquery_schema_cache.json
+
+# Test files
+test_*.py

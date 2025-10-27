@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gcloud:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(./toolbox.exe --prebuilt bigquery --stdio)",
+      "Bash(git init:*)",
+      "Bash(dir:*)",
+      "Bash(git pull:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git filter-branch:*)",
+      "Read(//c/Users/JL/Desktop/GithubProjects/**)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
