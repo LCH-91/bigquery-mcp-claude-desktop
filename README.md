@@ -2,15 +2,6 @@
 
 讓 Claude Desktop 用自然語言查詢 BigQuery，支援中文欄位描述。
 
-## 安全聲明
-
-**資料傳輸風險**：
-- 查詢結果會傳送至 Anthropic 進行分析
-- 不適用於包含 PII、財務資料、敏感日誌的環境
-- 使用前需確認符合 GDPR/CCPA 等法規要求
-
----
-
 ## 特色
 
 - 中文語意支援：自動同步 Google Sheets 中的中文欄位描述到 BigQuery metadata
@@ -119,6 +110,15 @@ gcloud iam service-accounts keys create bigquery-key.json \
 | `bigquery.jobUser` | 執行查詢任務 |
 
 **禁止授予**：`bigquery.dataEditor`、`bigquery.admin`、`bigquery.dataOwner`
+
+---
+
+## 安全聲明
+
+**資料傳輸風險**：
+- 查詢結果會傳送至 Anthropic 進行分析
+- 不適用於包含 PII、財務資料、敏感日誌的環境
+- 使用前需確認符合 GDPR/CCPA 等法規要求
 
 ---
 
